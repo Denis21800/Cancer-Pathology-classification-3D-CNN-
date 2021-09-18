@@ -27,7 +27,6 @@ The config.json file is used to configure the data loading, training and validat
       "1": "Ovarian Cancer",
       "2": "Prostate Cancer",
       "3": "Kidney Cancer",
-      "4": "Schizophrenia"
       },
     Define parameters for data preprocessing:
     "preprocessing": {
