@@ -1,6 +1,5 @@
 
-Full description is given in the file https://github.com/Denis21800/Pathology-classification_V2/blob/main/readme/readme.pdf
-
+Full description is given in the file https://github.com/Denis21800/Cancer-Pathology-classification-3D-CNN-/blob/main/readme/readme_3D-Conv.pdf
 
 This pipeline can only be used with the Mongo DB installed. Follow the instructions to install Mongo DB https://docs.mongodb.com/manual/installation/
 The config.json file is used to configure the data loading, training and validation processes.
@@ -50,8 +49,9 @@ The config.json file is used to configure the data loading, training and validat
         $python core_app.py
     The results of the data loading and transformation process will be displayed in the console
     You can also check the upload results directly in Mongo database.
-  
 3.
+    Convert data to sequence of images. Specify image folder path in config file: "image folder": <path for data extraction> Execute the code contained in script     db_manager_convert.py $python db_manager_convert.py
+4.
     To start the model training mode, set the value of the pipeline_steps parameter
       "pipeline steps": ["load from db", "train"]
     Execute the code contained in script core_app.py
@@ -62,10 +62,15 @@ The config.json file is used to configure the data loading, training and validat
     To launch tensorboard and view the metrics, run the command:
       $tensorboard --logdir runs
   
-4. 
+5. 
     To start the model validation mode, set the value of the pipeline_steps parameter
     "pipeline steps": ["load from db", "validate"]
     Execute the code contained in script core_app.py
       $python core_app.py
-    Model validation results and
+    
+    Model training results and metrics for each training epoch will be displayed in the console.
+    The tensorboard package is used to visualize and track the training process of the model.
+    Model metrics are logged to the runs folder.
+    To launch tensorboard and view the metrics, run the command:
+        $tensorboard --logdir runs
 
